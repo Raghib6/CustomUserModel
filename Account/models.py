@@ -6,8 +6,8 @@ class CustomUser(AbstractBaseUser):
     first_name      =       models.CharField(max_length=50)
     last_name       =       models.CharField(max_length=50)
     username        =       models.CharField(max_length=50,unique=True)
-    email           =       models.EmailField(max_length=150)
-    age             =       models.IntegerField()
+    email           =       models.EmailField(max_length=150,unique=True)
+    age             =       models.IntegerField(null=True,blank=True)
 
     # required fields
 

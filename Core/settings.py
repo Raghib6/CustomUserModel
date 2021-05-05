@@ -5,7 +5,9 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY'),
+
+AUTH_USER_MODEL = 'Account.CustomUser'
 
 
 DEBUG = True
@@ -62,7 +64,7 @@ WSGI_APPLICATION = 'Core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / os.environ.get('NAME'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
